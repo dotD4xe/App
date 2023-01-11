@@ -20,7 +20,7 @@ private val retrofit = Retrofit.Builder()
 
 interface BankApiService {
     @GET("{number}")
-    suspend fun getUser(@Path("number") number: String?): List<clientData>
+    suspend fun getUser(@Path("number") number: String): ClientData
 }
 
 object BankApi {

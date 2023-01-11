@@ -1,11 +1,11 @@
 package com.example.applicationforcustomerinformation.network
 
 data class Country(
-    val alpha2: String,
-    val currency: String,
-    val emoji: String,
-    val latitude: Int,
-    val longitude: Int,
-    val name: String,
-    val numeric: String
+    val numeric: String?,
+    val alpha2: String?,
+    val name: String?,
+    val emoji: String?,
+    val currency: String?,
+    val latitude: Int?,
+    val longitude: Int?
 )

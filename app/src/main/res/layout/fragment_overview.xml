@@ -1,24 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-        <variable
-            name="viewModel"
-            type="com.example.applicationforcustomerinformation.OverviewViewModel" />
-    </data>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".OverviewFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.example.applicationforcustomerinformation.OverViewFragment">
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_bin_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="@string/hintBin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:prefixText="Number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_bin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:textColorHint="#616161"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/text1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_the_first_digits_of_a_card_number_bin_iin"
+            app:layout_constraintTop_toBottomOf="@id/search_bin_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/filledButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/click"
+            app:layout_constraintTop_toBottomOf="@id/info"
+            app:layout_constraintStart_toStartOf="@id/info"
+            app:layout_constraintEnd_toEndOf="@id/info"/>
+
+
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+</ScrollView>
