@@ -1,0 +1,327 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:id="@+id/bin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/schemeAndNetworkLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:alpha="0.75"
+            android:text="@string/scheme_network"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bin"/>
+
+        <TextView
+            android:id="@+id/schemeAndNetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/schemeAndNetworkLabel"
+            app:layout_constraintStart_toStartOf="@id/schemeAndNetworkLabel"/>
+
+        <TextView
+            android:id="@+id/typeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type"
+            android:alpha="0.75"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintStart_toEndOf="@id/schemeAndNetworkLabel"
+            app:layout_constraintTop_toTopOf="@id/schemeAndNetworkLabel"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/typeDebit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/debit"
+            android:alpha="0.35"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/typeLabel"
+            app:layout_constraintStart_toStartOf="@id/typeLabel"/>
+
+        <TextView
+            android:id="@+id/slash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.60"
+            android:text="@string/slash"
+            app:layout_constraintStart_toEndOf="@id/typeDebit"
+            app:layout_constraintTop_toTopOf="@id/typeDebit"/>
+
+        <TextView
+            android:id="@+id/typeCredit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.35"
+            android:textColor="@color/black"
+            android:text="@string/credit"
+            app:layout_constraintStart_toEndOf="@id/slash"
+            app:layout_constraintTop_toTopOf="@id/typeDebit"/>
+
+        <TextView
+            android:id="@+id/brandLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:alpha="0.75"
+            android:text="@string/brand"
+            app:layout_constraintTop_toBottomOf="@id/schemeAndNetwork"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/brandLabel"
+            app:layout_constraintTop_toBottomOf="@id/brandLabel"/>
+
+        <TextView
+            android:id="@+id/prepaidLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.75"
+            android:text="@string/prepaid"
+            app:layout_constraintTop_toTopOf="@id/brandLabel"
+            app:layout_constraintStart_toStartOf="@id/typeLabel"/>
+
+        <TextView
+            android:id="@+id/prepaidYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.35"
+            android:textColor="@color/black"
+            android:text="@string/yes"
+            app:layout_constraintTop_toBottomOf="@id/prepaidLabel"
+            app:layout_constraintStart_toStartOf="@id/prepaidLabel"/>
+
+        <TextView
+            android:id="@+id/slash2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/slash1"
+            android:alpha="0.50"
+            app:layout_constraintStart_toEndOf="@id/prepaidYes"
+            app:layout_constraintTop_toTopOf="@id/prepaidYes"/>
+
+        <TextView
+            android:id="@+id/prepaidNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no"
+            android:alpha="0.35"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/slash2"
+            app:layout_constraintTop_toTopOf="@id/prepaidYes"/>
+
+        <TextView
+            android:id="@+id/cardNumberLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:alpha="0.75"
+            android:text="@string/card_number"
+            app:layout_constraintTop_toBottomOf="@id/brand"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/lengthLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/length"
+            android:textSize="11sp"
+            android:alpha="0.75"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            app:layout_constraintStart_toStartOf="@id/cardNumberLabel"
+            app:layout_constraintTop_toBottomOf="@id/cardNumberLabel"/>
+
+        <TextView
+            android:id="@+id/length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lengthLabel"/>
+
+        <TextView
+            android:id="@+id/luhnLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:text="@string/luhn"
+            android:textSize="11sp"
+            android:alpha="0.75"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            app:layout_constraintStart_toEndOf="@id/lengthLabel"
+            app:layout_constraintTop_toTopOf="@id/lengthLabel"/>
+
+        <TextView
+            android:id="@+id/luhnYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.35"
+            android:textColor="@color/black"
+            android:text="@string/yes2"
+            app:layout_constraintTop_toBottomOf="@id/luhnLabel"
+            app:layout_constraintStart_toStartOf="@id/luhnLabel"/>
+
+        <TextView
+            android:id="@+id/slash3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/slash2"
+            android:alpha="0.50"
+            app:layout_constraintStart_toEndOf="@id/luhnYes"
+            app:layout_constraintTop_toTopOf="@id/luhnYes"/>
+
+        <TextView
+            android:id="@+id/luhnNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no2"
+            android:alpha="0.35"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/slash3"
+            app:layout_constraintTop_toTopOf="@id/luhnYes"/>
+
+        <TextView
+            android:id="@+id/countryLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/country"
+            android:alpha="0.75"
+            app:layout_constraintTop_toTopOf="@id/cardNumberLabel"
+            app:layout_constraintStart_toStartOf="@id/prepaidLabel"/>
+
+        <TextView
+            android:id="@+id/alpha2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            app:layout_constraintStart_toStartOf="@id/countryLabel"
+            app:layout_constraintTop_toBottomOf="@id/countryLabel"/>
+
+        <TextView
+            android:id="@+id/country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginStart="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            app:layout_constraintStart_toEndOf="@id/alpha2"
+            app:layout_constraintTop_toBottomOf="@id/countryLabel"/>
+
+        <TextView
+            android:id="@+id/latitudeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/latitude"
+            android:textSize="12sp"
+            android:alpha="0.80"
+            app:layout_constraintStart_toStartOf="@id/alpha2"
+            app:layout_constraintTop_toBottomOf="@id/country"/>
+
+        <TextView
+            android:id="@+id/latitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/latitudeLabel"
+            app:layout_constraintTop_toBottomOf="@id/country"
+            app:layout_constraintBottom_toBottomOf="@id/latitudeLabel"/>
+
+        <TextView
+            android:id="@+id/longitudeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:alpha="0.80"
+            android:text="@string/longitude"
+            app:layout_constraintStart_toEndOf="@id/latitude"
+            app:layout_constraintTop_toTopOf="@id/latitudeLabel"/>
+
+        <TextView
+            android:id="@+id/longitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/longitudeLabel"
+            app:layout_constraintTop_toBottomOf="@id/country"/>
+
+        <TextView
+            android:id="@+id/bankLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/bank"
+            android:alpha="0.75"
+            app:layout_constraintTop_toBottomOf="@id/length"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/nameBank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bankLabel"/>
+
+        <TextView
+            android:id="@+id/cityBank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/nameBank"
+            app:layout_constraintTop_toBottomOf="@id/bankLabel"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/urlBank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameBank"/>
+
+        <TextView
+            android:id="@+id/numberBank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/urlBank"/>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
