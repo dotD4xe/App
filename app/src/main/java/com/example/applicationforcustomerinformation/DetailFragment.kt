@@ -16,7 +16,7 @@ class DetailFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val fragmentBinding = FragmentDetailBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root
