@@ -26,4 +26,6 @@
     <string name="latitude">latitude:</string>
     <string name="longitude">, longitude:</string>
     <string name="bank">BANK</string>
+    <string name="request_history">request history:</string>
+    <string name="bin_for_item">BIN:</string>
 </resources>

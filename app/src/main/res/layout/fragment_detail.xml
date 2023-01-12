@@ -15,13 +15,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
+            android:text=""
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
 
         <TextView
-            android:id="@+id/schemeAndNetworkLabel"
+            android:id="@+id/scheme_and_network_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -31,33 +32,33 @@
             app:layout_constraintTop_toBottomOf="@id/bin"/>
 
         <TextView
-            android:id="@+id/schemeAndNetwork"
+            android:id="@+id/scheme_and_network"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/schemeAndNetworkLabel"
-            app:layout_constraintStart_toStartOf="@id/schemeAndNetworkLabel"/>
+            app:layout_constraintTop_toBottomOf="@id/scheme_and_network_label"
+            app:layout_constraintStart_toStartOf="@id/scheme_and_network_label"/>
 
         <TextView
-            android:id="@+id/typeLabel"
+            android:id="@+id/type_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/type"
             android:alpha="0.75"
             app:layout_constraintHorizontal_bias="0.3"
-            app:layout_constraintStart_toEndOf="@id/schemeAndNetworkLabel"
-            app:layout_constraintTop_toTopOf="@id/schemeAndNetworkLabel"
+            app:layout_constraintStart_toEndOf="@id/scheme_and_network_label"
+            app:layout_constraintTop_toTopOf="@id/scheme_and_network_label"
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
-            android:id="@+id/typeDebit"
+            android:id="@+id/type_debit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/debit"
             android:alpha="0.35"
             android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/typeLabel"
-            app:layout_constraintStart_toStartOf="@id/typeLabel"/>
+            app:layout_constraintTop_toBottomOf="@id/type_label"
+            app:layout_constraintStart_toStartOf="@id/type_label"/>
 
         <TextView
             android:id="@+id/slash"
@@ -65,27 +66,27 @@
             android:layout_height="wrap_content"
             android:alpha="0.60"
             android:text="@string/slash"
-            app:layout_constraintStart_toEndOf="@id/typeDebit"
-            app:layout_constraintTop_toTopOf="@id/typeDebit"/>
+            app:layout_constraintStart_toEndOf="@id/type_debit"
+            app:layout_constraintTop_toTopOf="@id/type_debit"/>
 
         <TextView
-            android:id="@+id/typeCredit"
+            android:id="@+id/type_credit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.35"
             android:textColor="@color/black"
             android:text="@string/credit"
             app:layout_constraintStart_toEndOf="@id/slash"
-            app:layout_constraintTop_toTopOf="@id/typeDebit"/>
+            app:layout_constraintTop_toTopOf="@id/type_debit"/>
 
         <TextView
-            android:id="@+id/brandLabel"
+            android:id="@+id/brand_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:alpha="0.75"
             android:text="@string/brand"
-            app:layout_constraintTop_toBottomOf="@id/schemeAndNetwork"
+            app:layout_constraintTop_toBottomOf="@id/scheme_and_network"
             app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
@@ -93,27 +94,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@id/brandLabel"
-            app:layout_constraintTop_toBottomOf="@id/brandLabel"/>
+            app:layout_constraintStart_toStartOf="@id/brand_label"
+            app:layout_constraintTop_toBottomOf="@id/brand_label"/>
 
         <TextView
-            android:id="@+id/prepaidLabel"
+            android:id="@+id/prepaid_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.75"
             android:text="@string/prepaid"
-            app:layout_constraintTop_toTopOf="@id/brandLabel"
-            app:layout_constraintStart_toStartOf="@id/typeLabel"/>
+            app:layout_constraintTop_toTopOf="@id/brand_label"
+            app:layout_constraintStart_toStartOf="@id/type_label"/>
 
         <TextView
-            android:id="@+id/prepaidYes"
+            android:id="@+id/prepaid_yes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.35"
             android:textColor="@color/black"
             android:text="@string/yes"
-            app:layout_constraintTop_toBottomOf="@id/prepaidLabel"
-            app:layout_constraintStart_toStartOf="@id/prepaidLabel"/>
+            app:layout_constraintTop_toBottomOf="@id/prepaid_label"
+            app:layout_constraintStart_toStartOf="@id/prepaid_label"/>
 
         <TextView
             android:id="@+id/slash2"
@@ -121,21 +122,21 @@
             android:layout_height="wrap_content"
             android:text="@string/slash1"
             android:alpha="0.50"
-            app:layout_constraintStart_toEndOf="@id/prepaidYes"
-            app:layout_constraintTop_toTopOf="@id/prepaidYes"/>
+            app:layout_constraintStart_toEndOf="@id/prepaid_yes"
+            app:layout_constraintTop_toTopOf="@id/prepaid_yes"/>
 
         <TextView
-            android:id="@+id/prepaidNo"
+            android:id="@+id/prepaid_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/no"
             android:alpha="0.35"
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@id/slash2"
-            app:layout_constraintTop_toTopOf="@id/prepaidYes"/>
+            app:layout_constraintTop_toTopOf="@id/prepaid_yes"/>
 
         <TextView
-            android:id="@+id/cardNumberLabel"
+            android:id="@+id/card_number_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -145,7 +146,7 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
-            android:id="@+id/lengthLabel"
+            android:id="@+id/length_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/length"
@@ -153,8 +154,8 @@
             android:alpha="0.75"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            app:layout_constraintStart_toStartOf="@id/cardNumberLabel"
-            app:layout_constraintTop_toBottomOf="@id/cardNumberLabel"/>
+            app:layout_constraintStart_toStartOf="@id/card_number_label"
+            app:layout_constraintTop_toBottomOf="@id/card_number_label"/>
 
         <TextView
             android:id="@+id/length"
@@ -162,10 +163,10 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lengthLabel"/>
+            app:layout_constraintTop_toBottomOf="@id/length_label"/>
 
         <TextView
-            android:id="@+id/luhnLabel"
+            android:id="@+id/luhn_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="45dp"
@@ -174,18 +175,18 @@
             android:alpha="0.75"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            app:layout_constraintStart_toEndOf="@id/lengthLabel"
-            app:layout_constraintTop_toTopOf="@id/lengthLabel"/>
+            app:layout_constraintStart_toEndOf="@id/length_label"
+            app:layout_constraintTop_toTopOf="@id/length_label"/>
 
         <TextView
-            android:id="@+id/luhnYes"
+            android:id="@+id/luhn_yes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.35"
             android:textColor="@color/black"
             android:text="@string/yes2"
-            app:layout_constraintTop_toBottomOf="@id/luhnLabel"
-            app:layout_constraintStart_toStartOf="@id/luhnLabel"/>
+            app:layout_constraintTop_toBottomOf="@id/luhn_label"
+            app:layout_constraintStart_toStartOf="@id/luhn_label"/>
 
         <TextView
             android:id="@+id/slash3"
@@ -193,27 +194,27 @@
             android:layout_height="wrap_content"
             android:text="@string/slash2"
             android:alpha="0.50"
-            app:layout_constraintStart_toEndOf="@id/luhnYes"
-            app:layout_constraintTop_toTopOf="@id/luhnYes"/>
+            app:layout_constraintStart_toEndOf="@id/luhn_yes"
+            app:layout_constraintTop_toTopOf="@id/luhn_yes"/>
 
         <TextView
-            android:id="@+id/luhnNo"
+            android:id="@+id/luhn_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/no2"
             android:alpha="0.35"
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@id/slash3"
-            app:layout_constraintTop_toTopOf="@id/luhnYes"/>
+            app:layout_constraintTop_toTopOf="@id/luhn_yes"/>
 
         <TextView
-            android:id="@+id/countryLabel"
+            android:id="@+id/country_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/country"
             android:alpha="0.75"
-            app:layout_constraintTop_toTopOf="@id/cardNumberLabel"
-            app:layout_constraintStart_toStartOf="@id/prepaidLabel"/>
+            app:layout_constraintTop_toTopOf="@id/card_number_label"
+            app:layout_constraintStart_toStartOf="@id/prepaid_label"/>
 
         <TextView
             android:id="@+id/alpha2"
@@ -222,8 +223,8 @@
             android:textColor="@color/black"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            app:layout_constraintStart_toStartOf="@id/countryLabel"
-            app:layout_constraintTop_toBottomOf="@id/countryLabel"/>
+            app:layout_constraintStart_toStartOf="@id/country_label"
+            app:layout_constraintTop_toBottomOf="@id/country_label"/>
 
         <TextView
             android:id="@+id/country"
@@ -234,10 +235,10 @@
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             app:layout_constraintStart_toEndOf="@id/alpha2"
-            app:layout_constraintTop_toBottomOf="@id/countryLabel"/>
+            app:layout_constraintTop_toBottomOf="@id/country_label"/>
 
         <TextView
-            android:id="@+id/latitudeLabel"
+            android:id="@+id/latitude_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/latitude"
@@ -252,19 +253,19 @@
             android:layout_height="wrap_content"
             android:textSize="13sp"
             android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@id/latitudeLabel"
+            app:layout_constraintStart_toEndOf="@id/latitude_label"
             app:layout_constraintTop_toBottomOf="@id/country"
-            app:layout_constraintBottom_toBottomOf="@id/latitudeLabel"/>
+            app:layout_constraintBottom_toBottomOf="@id/latitude_label"/>
 
         <TextView
-            android:id="@+id/longitudeLabel"
+            android:id="@+id/longitude_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
             android:alpha="0.80"
             android:text="@string/longitude"
             app:layout_constraintStart_toEndOf="@id/latitude"
-            app:layout_constraintTop_toTopOf="@id/latitudeLabel"/>
+            app:layout_constraintTop_toTopOf="@id/latitude_label"/>
 
         <TextView
             android:id="@+id/longitude"
@@ -272,11 +273,11 @@
             android:layout_height="wrap_content"
             android:textSize="13sp"
             android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@id/longitudeLabel"
+            app:layout_constraintStart_toEndOf="@id/longitude_label"
             app:layout_constraintTop_toBottomOf="@id/country"/>
 
         <TextView
-            android:id="@+id/bankLabel"
+            android:id="@+id/bank_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -286,38 +287,40 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/nameBank"
+            android:id="@+id/name_bank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bankLabel"/>
+            app:layout_constraintTop_toBottomOf="@id/bank_label"/>
 
         <TextView
-            android:id="@+id/cityBank"
+            android:id="@+id/city_bank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="5dp"
             android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@id/nameBank"
-            app:layout_constraintTop_toBottomOf="@id/bankLabel"
+            app:layout_constraintStart_toEndOf="@id/name_bank"
+            app:layout_constraintTop_toBottomOf="@id/bank_label"
             tools:ignore="RtlSymmetry" />
 
         <TextView
-            android:id="@+id/urlBank"
+            android:id="@+id/url_bank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            tools:text="www.ddd.dk"
+            android:textColor="#547ED6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/nameBank"/>
+            app:layout_constraintTop_toBottomOf="@id/name_bank"/>
 
         <TextView
-            android:id="@+id/numberBank"
+            android:id="@+id/number_bank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="#547ED6"
+            tools:text="98767886567"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/urlBank"/>
+            app:layout_constraintTop_toBottomOf="@id/url_bank"/>
 
 
 

@@ -1,17 +1,24 @@
 package com.example.applicationforcustomerinformation
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.applicationforcustomerinformation.databinding.FragmentDetailBinding
+import com.example.applicationforcustomerinformation.viewmodels.OverviewViewModel
+import com.example.applicationforcustomerinformation.viewmodels.OverviewViewModelFactory
 
 class DetailFragment : Fragment() {
     private var binding: FragmentDetailBinding? = null
-    private val viewModel: OverviewViewModel by activityViewModels()
-
+    private val viewModel: OverviewViewModel by activityViewModels {
+        OverviewViewModelFactory(
+            (activity?.application as OverviewApplication).database.itemDao()
+        )
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,6 +33,7 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding?.apply {
             bin.text = viewModel.bin.value
+            viewModel.addNewItem(binding?.bin?.text.toString())
             viewModel.data.observe(viewLifecycleOwner
             ) { newScore ->
                 bindLuhn(newScore.number?.luhn)
@@ -42,8 +50,23 @@ class DetailFragment : Fragment() {
                 cityBank.text = newScore.bank?.city.toString()
                 urlBank.text = newScore.bank?.url.toString()
                 numberBank.text = newScore.bank?.phone.toString()
+                numberBank.setOnClickListener { clickNumber(numberBank.text.toString()) }
+                urlBank.setOnClickListener { clickUrl(urlBank.text.toString()) }
             }
         }
+    }
+
+
+    private fun clickUrl(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse("http://$url")
+        startActivity(intent)
+    }
+
+    private fun clickNumber(number: String) {
+        val dialIntent = Intent(Intent.ACTION_DIAL)
+        dialIntent.data = Uri.parse("tel:$number")
+        startActivity(dialIntent)
     }
 
     private fun bindType(type: String) {
