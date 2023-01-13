@@ -13,7 +13,8 @@ import com.example.applicationforcustomerinformation.viewmodels.OverviewViewMode
 import com.example.applicationforcustomerinformation.viewmodels.OverviewViewModelFactory
 
 class OverviewFragment : Fragment() {
-    private var binding: FragmentOverviewBinding? = null
+    private var _binding: FragmentOverviewBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: OverviewViewModel by activityViewModels {
         OverviewViewModelFactory(
             (activity?.application as OverviewApplication).database.itemDao()
@@ -24,19 +25,17 @@ class OverviewFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val fragmentBinding = FragmentOverviewBinding.inflate(inflater, container, false)
-        binding = fragmentBinding
-
-        return fragmentBinding.root
+        _binding = FragmentOverviewBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding?.filledButton?.setOnClickListener {
-            if (binding?.searchBin?.text?.isBlank() == true) {
-                binding?.searchBin?.error = "Enter BIN"
+        binding.filledButton.setOnClickListener {
+            if (binding.searchBin.text?.isBlank() == true) {
+                binding.searchBin.error = "Enter BIN"
             } else {
-                val bin = binding?.searchBin?.text.toString()
+                val bin = binding.searchBin.text.toString()
                 viewModel.getClientData(bin)
                 this.findNavController().navigate(R.id.action_overviewFragment2_to_detailFragment)
             }
@@ -48,14 +47,14 @@ class OverviewFragment : Fragment() {
                 this.findNavController().navigate(R.id.action_overviewFragment2_to_detailFragment)
             }
         )
-        binding?.recyclerView?.adapter = adapter
+        binding.recyclerView.adapter = adapter
 
         viewModel.allItems.observe(this.viewLifecycleOwner) { items ->
             items.let {
                 adapter.submitList(it)
             }
         }
-        binding?.recyclerView?.layoutManager = LinearLayoutManager(this.context)
+        binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
     }
 
 }

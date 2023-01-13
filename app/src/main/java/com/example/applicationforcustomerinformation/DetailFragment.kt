@@ -13,7 +13,8 @@ import com.example.applicationforcustomerinformation.viewmodels.OverviewViewMode
 import com.example.applicationforcustomerinformation.viewmodels.OverviewViewModelFactory
 
 class DetailFragment : Fragment() {
-    private var binding: FragmentDetailBinding? = null
+    private var _binding: FragmentDetailBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: OverviewViewModel by activityViewModels {
         OverviewViewModelFactory(
             (activity?.application as OverviewApplication).database.itemDao()
@@ -24,16 +25,15 @@ class DetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val fragmentBinding = FragmentDetailBinding.inflate(inflater, container, false)
-        binding = fragmentBinding
-        return fragmentBinding.root
+        _binding = FragmentDetailBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding?.apply {
+        binding.apply {
             bin.text = viewModel.bin.value
-            viewModel.addNewItem(binding?.bin?.text.toString())
+            viewModel.addNewItem(binding.bin.text.toString())
             viewModel.data.observe(viewLifecycleOwner
             ) { newScore ->
                 bindLuhn(newScore.number?.luhn)
@@ -71,33 +71,33 @@ class DetailFragment : Fragment() {
 
     private fun bindType(type: String) {
         when(type) {
-            "debit" -> binding?.typeDebit?.alpha = 1.0F
-            "credit" -> binding?.typeCredit?.alpha = 1.0F
+            "debit" -> binding.typeDebit.alpha = 1.0F
+            "credit" -> binding.typeCredit.alpha = 1.0F
             else -> {
-                binding?.typeCredit?.alpha = 0.35F
-                binding?.typeDebit?.alpha = 0.35F
+                binding.typeCredit.alpha = 0.35F
+                binding.typeDebit.alpha = 0.35F
             }
         }
     }
 
     private fun bindPrepaid(prepaid: Boolean?) {
         when(prepaid) {
-            true -> binding?.prepaidYes?.alpha = 1.0F
-            false -> binding?.prepaidNo?.alpha = 1.0F
+            true -> binding.prepaidYes.alpha = 1.0F
+            false -> binding.prepaidNo.alpha = 1.0F
             else -> {
-                binding?.prepaidNo?.alpha = 0.35F
-                binding?.prepaidYes?.alpha = 0.35F
+                binding.prepaidNo.alpha = 0.35F
+                binding.prepaidYes.alpha = 0.35F
             }
         }
     }
 
     private fun bindLuhn(luhn: Boolean?) {
         when(luhn) {
-            true -> binding?.luhnYes?.alpha = 1.0F
-            false -> binding?.luhnNo?.alpha = 1.0F
+            true -> binding.luhnYes.alpha = 1.0F
+            false -> binding.luhnNo.alpha = 1.0F
             else -> {
-                binding?.luhnNo?.alpha = 0.35F
-                binding?.luhnYes?.alpha = 0.35F
+                binding.luhnNo.alpha = 0.35F
+                binding.luhnYes.alpha = 0.35F
             }
         }
     }
