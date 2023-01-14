@@ -57,4 +57,9 @@ class OverviewFragment : Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 }
